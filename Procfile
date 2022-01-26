@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT src.app:webapp
+web: PYTHONPATH=$(pwd)'/src' waitress-serve --port=$PORT src.app:webapp
