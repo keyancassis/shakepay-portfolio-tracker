@@ -1,0 +1,41 @@
+h1 {
+    font-size: 60px;
+    text-align: center;
+}
+h2 {
+    font-size: 48px;
+    text-align: center;
+}
+.portfolio-section {
+    margin: auto;
+    margin-top: 100px;
+    font-size: 24px;
+    width: 80%;
+}
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 50%;
+}
+h3 {
+    text-align: left;
+}
+tr {
+    text-align: left;
+    width: 200px;
+}
+#table-caption {
+    margin: auto;
+    width: 50%;
+}
+#history-table td, #history-table th{
+    border: 1px solid black;
+}
+.table-wrapper {
+    overflow-y: scroll;
+    max-height: 500px;
+}
+.history-table-wrapper thead th {
+    position: sticky;
+    top: 0;
+}
