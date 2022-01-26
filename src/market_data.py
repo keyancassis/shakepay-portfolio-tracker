@@ -7,6 +7,9 @@ ETH_CAD_HISTORY_API = MARKET_API_PREFIX + 'rates_CAD_ETH.json'
 
 
 class MarketData:
+    """
+    This class is used to fetch market data
+    """
     def __init__(self):
         self.btc_cad_history = self.get_price_history('BTC')
         self.eth_cad_history = self.get_price_history('ETH')
@@ -15,6 +18,9 @@ class MarketData:
         self.last_known_eth_cad = 0
 
     def get_price_on_date(self, currency, date):
+        """
+        Return the price of the given currency on date (YYYY-MM-DD)
+        """
         if currency == 'BTC':
             price = self.btc_cad_history.get(date)
             if not price:
@@ -31,6 +37,9 @@ class MarketData:
 
     @staticmethod
     def get_current_price(currency):
+        """
+        Get the current market price for the given currency
+        """
         if currency == 'CAD':
             return 1
         try:
@@ -44,6 +53,9 @@ class MarketData:
 
     @staticmethod
     def get_price_history(currency):
+        """
+        Get a list of the daily price of the given currency
+        """
         try:
             url = BTC_CAD_HISTORY_API if currency == 'BTC' else \
                   ETH_CAD_HISTORY_API

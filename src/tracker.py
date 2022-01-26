@@ -8,6 +8,10 @@ market_data = None
 
 
 def get_transaction_history():
+    """
+    Get transaction history. If it's the first time, cache
+    the results in 'transaction_history' global variable
+    """
     global transaction_history
     if not transaction_history:
         try:
@@ -21,6 +25,9 @@ def get_transaction_history():
 
 
 def float_to_price_string(flt, num_decimals):
+    """
+    Convert a float to '100,000,000.00' format
+    """
     format_str = '{:.' + str(num_decimals) + 'f}'
     main_number = format_str.format(flt)
     decimals_suffix = main_number[-num_decimals:]  # remove main number
@@ -28,6 +35,17 @@ def float_to_price_string(flt, num_decimals):
 
 
 def calculate_balances():
+    """
+    Calculate and return current and historical portfolio balances
+    in the following format:
+        {
+            "CAD": (str),
+            "BTC": (str),
+            "ETH": (str),
+            "networth": (str),
+            "daily_networth": (dict)
+        }
+    """
     global market_data
     # Get and cache market_data if first time
     if not market_data:
